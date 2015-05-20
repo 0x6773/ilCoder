@@ -8,4 +8,4 @@ xbuild
 
 echo "\n"
 
-ilCoder/bin/Debug/ilCoder.exe 
+ilCoder/bin/Debug/ilCoder.exe $@
