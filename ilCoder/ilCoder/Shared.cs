@@ -54,7 +54,12 @@ namespace ilCoder
 				MethodDefinition fmd = type.Methods [j];
 
 				foreach (Instruction instr in fmd.Body.Instructions) {
-					ilCode.AppendFormat ("{0} {1} {2}\n", instr.Offset, instr.OpCode, instr.Operand);
+					//if(instr.OpCode.ToString().Length > 12)
+					//	ilCode.AppendFormat ("{0}\t{1}\t{2}\n", instr.Offset, instr.OpCode, instr.Operand);
+					if(instr.OpCode.ToString().Length >= 8)
+						ilCode.AppendFormat ("{0}\t{1}\t{2}\n", instr.Offset, instr.OpCode, instr.Operand);
+					else
+						ilCode.AppendFormat ("{0}\t{1}\t\t{2}\n", instr.Offset, instr.OpCode, instr.Operand);
 				}
 
 				if (outputFile == null)
